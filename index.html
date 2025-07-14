@@ -30,26 +30,42 @@
     nav a:hover {
       text-decoration: underline;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem 1rem;
+
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
-    .quad {
-      background: white;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      text-align: center;
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%;
     }
-    img {
-      max-width: 100%;
-      border-radius: 4px;
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
     }
-    h2 {
-      margin: 0.5rem 0;
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
     }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+
     .contact {
       text-align: center;
       margin: 2rem;
@@ -69,6 +85,7 @@
     .btn:hover {
       background-color: #1da851;
     }
+
     footer {
       background-color: #222;
       color: white;
@@ -79,6 +96,27 @@
       color: white;
       text-decoration: none;
       margin: 0 0.5rem;
+    }
+
+    /* Botão WhatsApp Flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .whatsapp-float:hover {
+      background-color: #1da851;
     }
   </style>
 </head>
@@ -95,26 +133,16 @@
     <a href="https://www.instagram.com/leo.finearts" target="_blank">Instagram</a>
   </nav>
 
-  <section class="gallery">
-    <div class="quad">
-      <img src="amy.jpeg" alt="Quadro Amy Winehouse" />
-      <h2>Amy Winehouse</h2>
-      <p>40x50cm</p>
-      <p>Preço: Sob consulta</p>
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides" id="slides">
+      <img src="amy.jpeg" alt="Quadro Amy Winehouse">
+      <img src="kurt.jpeg" alt="Quadro Kurt Cobain">
+      <img src="weeknd.jpeg" alt="Quadro The Weeknd">
     </div>
-    <div class="quad">
-      <img src="kurt.jpeg" alt="Quadro Kurt Cobain" />
-      <h2>Kurt Cobain</h2>
-      <p>40x50cm</p>
-      <p>Preço: Sob consulta</p>
-    </div>
-    <div class="quad">
-      <img src="weeknd.jpeg" alt="Quadro The Weeknd" />
-      <h2>The Weeknd</h2>
-      <p>40x50cm</p>
-      <p>Preço: Sob consulta</p>
-    </div>
-  </section>
+    <button class="nav-btn prev" onclick="prevSlide()">&#10094;</button>
+    <button class="nav-btn next" onclick="nextSlide()">&#10095;</button>
+  </div>
 
   <div class="contact">
     <a
@@ -132,5 +160,39 @@
     </p>
     <p>&copy; 2025 LeoGallery</p>
   </footer>
+
+  <!-- Botão Flutuante WhatsApp -->
+  <a
+    href="https://wa.me/5531997894025?text=Oi%20Leo!%20Quero%20um%20orçamento%20para%20encomendar%20um%20quadro."
+    class="whatsapp-float"
+    target="_blank"
+  >
+    💬
+  </a>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+
+    function showSlide(index) {
+      if (index >= totalSlides) {
+        slideIndex = 0;
+      } else if (index < 0) {
+        slideIndex = totalSlides - 1;
+      } else {
+        slideIndex = index;
+      }
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      showSlide(slideIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(slideIndex - 1);
+    }
+  </script>
 </body>
 </html>
