@@ -138,6 +138,36 @@
 .dot.active {
   background-color: #717171;
 }
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+.menu-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+  }
+  .menu-links a {
+    display: block;
+    margin: 1rem 0;
+  }
+  .menu-links.show {
+    display: flex;
+  }
+}
 
   </style>
 </head>
@@ -148,11 +178,15 @@
   </header>
 
   <nav>
+  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+  <div class="menu-links" id="menuLinks">
     <a href="#">Amy Winehouse</a>
     <a href="#">Kurt Cobain</a>
     <a href="#">The Weeknd</a>
     <a href="https://www.instagram.com/leo.finearts" target="_blank">Instagram</a>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- Carousel -->
   <div class="carousel">
@@ -178,8 +212,10 @@
 
   <footer>
     <p class="social">
-      Siga: <a href="https://www.instagram.com/leo.finearts" target="_blank">@leo.finearts</a>
-    </p>
+  Siga:
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:20px; height:20px; vertical-align:middle; margin-left:5px;">
+  <a href="https://www.instagram.com/leo.finearts" target="_blank">@leo.finearts</a>
+</p>
     <p>&copy; 2025 LeoGallery</p>
   </footer>
 
@@ -237,6 +273,12 @@
   function prevSlide() {
     showSlide(slideIndex - 1);
   }
+
+function toggleMenu() {
+  const menu = document.getElementById('menuLinks');
+  menu.classList.toggle('show');
+}
+
 
   // 👉 5) Inicializa mostrando el primer slide y actualizando el dot
   showSlide(slideIndex);
