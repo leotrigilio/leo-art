@@ -1,119 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LeoGallery - Arte Exclusiva</title>
+  <title>Leo Art - Arte Personalizada</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
-    header {
-      background-color: #222;
+
+    h1 {
+      color: #333;
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
       color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-    nav {
-      background-color: #444;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-    .quad {
-      background: white;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      text-align: center;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 4px;
-    }
-    .contact {
-      text-align: center;
-      margin: 2rem;
-    }
-    .btn {
-      background-color: #25d366;
-      color: white;
-      padding: 1rem 2rem;
       border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
       border-radius: 5px;
-      font-size: 1rem;
+      cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
+      margin-top: 20px;
+      transition: background 0.3s;
     }
-    .btn:hover {
-      background-color: #1da851;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .social a {
-      color: white;
-      text-decoration: none;
-      margin: 0 0.5rem;
+
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>LeoGallery</h1>
-    <p>Quadros artísticos exclusivos – Encomendas a partir de R$ 490</p>
-  </header>
-
-  <nav>
-    <a href="#">Amy Winehouse</a>
-    <a href="#">Outros Quadros</a>
-    <a href="https://www.instagram.com/leo.finearts" target="_blank">Instagram</a>
-  </nav>
-
-  <section class="gallery">
-    <div class="quad">
-      <img src="amy.jpeg" alt="Quadro Amy Winehouse" />
-      <h2>Amy Winehouse</h2>
-      <p>40x50cm</p>
-      <p>Preço: Sob consulta</p>
-    </div>
-  </section>
-
-  <div class="contact">
-    <a
-      class="btn"
-      href="https://wa.me/5531997894025?text=Quero%20um%20orçamento%20para%20encomenda%20de%20um%20quadro%2C%20por%20favor%20*-*"
-      target="_blank"
-    >
-      Fale comigo no WhatsApp
-    </a>
-  </div>
-
-  <footer>
-    <p class="social">
-      Siga: <a href="https://www.instagram.com/leo.finearts" target="_blank">@leo.finearts</a>
-    </p>
-    <p>&copy; 2025 LeoGallery</p>
-  </footer>
+  <h1>Bem-vindo ao Leo Art</h1>
+  <p>Peça sua arte personalizada de forma rápida e direta. Fale comigo agora mesmo no WhatsApp e transforme suas ideias em uma arte única.</p>
+  <a class="whatsapp-btn" href="https://wa.me/5531997894025?text=Oi!%20Quero%20fazer%20um%20orçamento%20de%20arte." target="_blank">Pedir pelo WhatsApp</a>
 </body>
 </html>
