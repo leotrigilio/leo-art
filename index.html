@@ -7,6 +7,46 @@
   <meta name="description" content="Quadros artísticos contemporâneos feitos à mão sob encomenda. Arte exclusiva inspirada em ícones da música e cultura. Encomendas via WhatsApp.">
 
   <style>
+    .gallery {
+  padding: 4rem 2rem;
+  background-color: #000;
+  color: white;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
     .hero {
   position: relative;
   width: 100%;
@@ -256,6 +296,28 @@
     </a>
   </div>
 </section>
+
+  <section class="gallery">
+  <h2>Galeria de quadros artísticos</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="amy.jpeg" alt="Quadro artístico contemporâneo de Amy Winehouse">
+      <h3>Amy Winehouse</h3>
+    </div>
+
+    <div class="card">
+      <img src="kurt.jpeg" alt="Quadro artístico contemporâneo de Kurt Cobain">
+      <h3>Kurt Cobain</h3>
+    </div>
+
+    <div class="card">
+      <img src="weeknd.jpeg" alt="Quadro artístico contemporâneo The Weeknd">
+      <h3>The Weeknd</h3>
+    </div>
+  </div>
+</section>
+
 
 
   <div class="contact">
